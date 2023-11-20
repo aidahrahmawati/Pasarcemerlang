@@ -96,7 +96,8 @@
       let namaBarang = $("#nama-barang");
       let hargaBarang = $("#harga-barang");
 
-      $("#tombol-simpan").click(async function() {
+      $("#tombol-simpan").click(async function(event) {
+        event.prevenDefault();
 
         try {
           const barangRef = await addDoc(collection(db, "barang"), {
