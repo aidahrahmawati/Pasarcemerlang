@@ -79,7 +79,7 @@
     } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js';
     import { konfigurasiFirebase } from '/Pasarcemerlang/konfigurasi-firebase.js';
     import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
-    import { getStorage, ref, getDownloudURL } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-storage.js";
+    import { getStorage, ref, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-storage.js";
 
     const app = initializeApp(konfigurasiFirebase);
     const provider = new GoogleAuthProvider();
@@ -94,7 +94,7 @@
         let namaFileFoto = doc.data().foto;
 
         if (namaFileFoto != '') {
-          getDownloudURL(ref(storage, namaFileFoto))
+          getDownloadURL(ref(storage, namaFileFoto))
             .then((url) => {
               const foto = document.getElementById(doc.id);
               foto.setAttribute('src', urlFoto);
