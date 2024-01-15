@@ -95,7 +95,7 @@
 
         if (namaFileFoto != '') {
           getDownloadURL(ref(storage, namaFileFoto))
-            .then((url) => {
+            .then((urlFoto) => {
               const foto = document.getElementById(doc.id);
               foto.setAttribute('src', urlFoto);
             })
